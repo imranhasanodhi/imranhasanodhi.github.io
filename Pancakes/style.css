@@ -1,9 +1,9 @@
 .container {
   font-family: sans-serif;
-  background: color(srgb red green blue); /* Soft beige and peach gradient */
+  background: color(srgb red green blue); 
   display: flex;
   align-items: flex-start;
-  color: #4b3832; /* Dark brown for text */
+  color: #4b3832; 
   justify-content: center;
   width: 100%;
 }
@@ -18,9 +18,9 @@ input, select {
   font-family: inherit;
   font-size: inherit;
   padding: 8px;
-  border: 1px solid #d17b49; /* Soft brown border */
+  border: 1px solid #d17b49; 
   border-radius: 5px;
-  background-color: #fff5e1; /* Light beige input background */
+  background-color: #fff5e1; 
 }
 
 
@@ -29,7 +29,7 @@ button {
   padding: 8px 14px;
   border: 1px solid #d17b49;
   border-radius: 5px;
-  background: #d17b49; /* Soft orange-brown */
+  background: #d17b49; 
   color: white;
   margin: 1rem 0;
   cursor: pointer;
@@ -37,7 +37,7 @@ button {
 }
 
 button:hover {
-  background: #b3583e; /* Darker brown on hover */
+  background: #b3583e; 
 }
 
 .image-container {
@@ -55,10 +55,10 @@ button:hover {
 .form-container {
   flex: 1;
   padding: 20px;
-  max-height: 100vh; /* Limit height to allow for scrolling */
-  overflow-y: auto; /* Enable scrolling within the form container */
-  background-color: #fff5e1; /* Match input background */
-  border-left: 3px solid #d17b49; /* Accent border */
+  max-height: 100vh; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable scrolling */
+  background-color: #fff5e1; 
+  border-left: 3px solid #d17b49;
 }
 
 .form-group {
@@ -69,17 +69,17 @@ button:hover {
   display: none;
   margin-top: 2rem;
   padding: 1rem;
-  background: #faf3e0; /* Light beige background */
-  border: 1px solid #d17b49; /* Matching border */
+  background: #faf3e0; 
+  border: 1px solid #d17b49; 
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .price-banner {
   position: absolute;
   top: 60px;
   right: 10%;
-  background-color: #b3583e; /* Rich brown color */
+  background-color: #b3583e; 
   color: white;
   border-radius: 100%;
   width: 160px;

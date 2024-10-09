@@ -7,7 +7,7 @@ const button = document.querySelector('button');
 const customerNameInput = document.querySelector('#customerName');
 const orderSummary = document.querySelector('.order-summary');
 
-let orders = []; // Array to store the orders
+let orders = []; 
 let total = 0;
 let selectedPancakeType = '';
 let selectedToppings = [];
@@ -109,7 +109,7 @@ const displayOrder = () => {
     // Scroll to the order summary smoothly
     displayOrder.scrollIntoView({ behavior: 'smooth' });
 
-    // Log the order details
+    // Order details
     const order = {
         name: customerName,
         pancakeType: typeSelect.selectedOptions[0].text,
@@ -121,9 +121,9 @@ const displayOrder = () => {
 
 };
 
-// Event listeners for changes and button clicks
+// Event listeners
 form.addEventListener('change', calculateTotalPrice);
-button.addEventListener('click', displayOrder); // Corrected to call the right function
+button.addEventListener('click', displayOrder); 
 
-// Initial calculation to set the price based on default selections
+// Initial price clacultion on default selection
 calculateTotalPrice();

@@ -52,7 +52,7 @@ const calculateTotalPrice = () => {
 const checkToppings = () => {
     checkboxes.forEach(item => {
         if (item.checked && item.dataset.category === 'toppings') {
-            const toppingPrice = parseInt(item.value) || 0;
+            const toppingPrice = parseInt(item.value) || 0;  // If items is undefined its default value is 0
             total += toppingPrice;
             selectedToppings.push(item.dataset.name);
         }

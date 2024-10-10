@@ -41,19 +41,19 @@ button:hover {
 }
 
 .image-container {
-  height: 100vh;
+  height: 100vh;  /*visible area of the browser window*/
   width: 50vw;
-  position: relative;
+  position: relative; /* for any child element possition will be relative*/
 }
 
 .image-container img {
   width: 100%;
   height: 100vh;
-  object-fit: cover;
+  object-fit: cover; /*This prevents the image from becoming stretched or squished*/
 }
 
 .form-container {
-  flex: 1;
+  flex: 1;  /*this allows the .form-container to expand or contract to fill the available space equally*/
   padding: 20px;
   max-height: 100vh; /* Limit height for scrolling */
   overflow-y: auto; /* Enable scrolling */
@@ -67,12 +67,12 @@ button:hover {
 
 .order-summary {
   display: none;
-  margin-top: 2rem;
+  margin-top: 2rem;  
   padding: 1rem;
   background: #faf3e0; 
   border: 1px solid #d17b49; 
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*offset-x offset-y blur-radius spread-radius color, transperency level .1*/
 }
 
 .price-banner {

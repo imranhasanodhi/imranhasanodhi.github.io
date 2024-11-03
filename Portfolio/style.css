@@ -37,7 +37,7 @@ body {
 }
 
 .hero-banner {
-  background-image: url('../images/hero.jpg');
+  background-image: url('./images/hero.jpg');
   background-size: cover;
   padding: 100px 20px;
   text-align: center;

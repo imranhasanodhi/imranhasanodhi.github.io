@@ -1,5 +1,5 @@
 * {
-  margin: 0px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -20,6 +20,7 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1000; /* Ensures header stays on top */
 }
 
 .header nav ul {
@@ -36,6 +37,7 @@ body {
   text-decoration: none;
 }
 
+/* Hero Section */
 .hero-banner {
   background-image: url('./images/hero.jpg');
   background-size: cover;
@@ -43,46 +45,70 @@ body {
   text-align: center;
   color: white;
   position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: 1;
 }
 
 .hero-heading {
   font-size: 2.5rem;
-  animation: fadeIn 2s ease;
   position: relative;
-  z-index: 1;
+  display: inline-block;
+  padding-bottom: 10px;
+  color: #f4f4f4; 
+  z-index: 2; /* Bring text above the overlay */
 }
 
-.hero-banner::before {
-  content: '';
+.underline-animation {
+  display: block;
+  height: 3px;
+  background-color: #DAA520;
+  width: 0;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+  left: 0;
+  animation: underline-grow 1.5s ease forwards;
+  opacity: 0.8;
 }
+
+@keyframes underline-grow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+
+
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
-}
+} 
 
-.project-card {
-  background-color: white;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
+.section {
+  padding: 80px 20px; 
+  margin-top: 60px;
 }
 
 .project-cards-container {
@@ -107,6 +133,7 @@ body {
   border-radius: 8px;
 }
 
+/* Gallery */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -123,7 +150,6 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  margin-bottom: 20px;
   text-align: center;
   padding: 10px;
 }
@@ -137,22 +163,10 @@ body {
   margin-bottom: 10px;
 }
 
-#about img {
-  width: 80%;
-  height: auto;
-  max-width: 300px;
-  border-radius: 8px;
-}
-
 .skills-section {
   background-color: #f0f4f8;
   padding: 40px 20px;
   text-align: center;
-}
-
-.skills-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
 }
 
 .skills-container {
@@ -171,11 +185,6 @@ body {
   text-align: left;
 }
 
-.skill-card h3 {
-  margin-bottom: 10px;
-}
-
-
 .progress-bar {
   background-color: #e0e0e0;
   border-radius: 8px;
@@ -187,6 +196,7 @@ body {
   background-color: #007bff;
   height: 100%;
 }
+
 
 .contact-section {
   background-color: #333;
@@ -203,9 +213,8 @@ body {
 .footer form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin: 0 auto;
+  max-width: 400px; 
 }
 
 .footer label {
@@ -220,11 +229,6 @@ body {
   border-radius: 5px;
   font-size: 1rem;
   margin-top: 5px;
-}
-
-.footer input:focus,
-.footer textarea:focus {
-  outline: none;
 }
 
 .footer button {
@@ -256,6 +260,7 @@ body {
   color: #0056b3;
 }
 
+/* Combined Responsive Styling */
 @media (max-width: 768px) {
   .skills-container {
     flex-direction: column;
@@ -265,9 +270,7 @@ body {
   .skill-card {
     width: 90%;
   }
-}
 
-@media (max-width: 768px) {
   .gallery-item {
     flex: 1 1 calc(50% - 20px);
   }
@@ -277,10 +280,9 @@ body {
   .gallery-item {
     flex: 1 1 100%;
   }
-}
 
-@media (max-width: 600px) {
-  .footer {
-    font-size: 0.9rem;
+  .footer form {
+    max-width: 90%;
+    padding: 10px;
   }
 }
